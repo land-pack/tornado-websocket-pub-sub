@@ -28,3 +28,24 @@ And then to keep connection alive, we need to send heartbeat, so we have use mul
 `sub.py` we have a Boss, it's implementation just like the `sub.py` but don't need thread to send heartbeat, name as `pub.py`
 to run all tornado instance with nginx, i have a configure file name as `websocket.conf` you just need to put on your nginx configure 
 path and then restart your nginx will work! (my path is `/etc/nginx/conf.d/websocket.conf`) 
+
+###Tornado & Redis
+------
+To manager your sub-publish, we have two way.
+
+*1 Message center send each sub-publish depend on different port!
+*2 Have broker to do sub/pub job between message center and sub-publish!
+
+============================================================================
+
+                                                                   ----user 1
+                                                                  /----user 2
+                                                      /---tornado A--->user 3
+                                                     /-----tornado B
+                                                    /-------tornado C
+[[Message Center]] ---- publish a news --->> [Redis] ------------
+                                                    \-------------
+                                                     \--------------
+
+{redis-cli}            { redis server }     { tornadoredis }  { websocket}
+============================================================================
