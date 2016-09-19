@@ -33,8 +33,8 @@ path and then restart your nginx will work! (my path is `/etc/nginx/conf.d/webso
 ------
 To manager your sub-publish, we have two way.
 
-*1 Message center send each sub-publish depend on different port!
-*2 Have broker to do sub/pub job between message center and sub-publish!
+* 1 Message center send each sub-publish depend on different port!
+* 2 Have broker to do sub/pub job between message center and sub-publish!
 
 ```
 ============================================================================
