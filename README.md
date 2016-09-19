@@ -36,6 +36,7 @@ To manager your sub-publish, we have two way.
 *1 Message center send each sub-publish depend on different port!
 *2 Have broker to do sub/pub job between message center and sub-publish!
 
+```
 ============================================================================
 
                                                                    ----user 1
@@ -49,3 +50,4 @@ To manager your sub-publish, we have two way.
 
 {redis-cli}            { redis server }     { tornadoredis }  { websocket}
 ============================================================================
+```
