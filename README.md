@@ -51,3 +51,44 @@ To manager your sub-publish, we have two way.
 {redis-cli}            { redis server }     { tornadoredis }  { websocket}
 ============================================================================
 ```
+
+### How to run it ?
+---
+
+Simple, you can activate your env if you run on virtual env.
+But don't forget install requirement before do that .
+```
+pip install -r requirements.txt
+```
+and then run your proxy server.
+
+```
+python proxy_server --port=9901
+python proxy_server --port=9902
+python proxy_server --port=9903
+```
+configuire your `websocket.conf` for your nginx and then restart your nginx.
+
+```
+cp websocket.conf /etc/nginx/conf.d/
+```
+
+And then run nginx as proxy load balance server.
+
+```
+service nginx restart
+```
+And then run a message center, just simultator a message publish center.
+
+```
+python new_center.py
+```
+
+Open a new terminal, play with the pub/sub server.
+
+```
+>>>from websocket import create_connection
+>>>ws = create_connection('ws://localhost:9900/ws')
+>>>ws.send('sub#77707|77708')
+>>>ws.recv()
+```
