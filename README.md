@@ -92,3 +92,21 @@ Open a new terminal, play with the pub/sub server.
 >>>ws.send('sub#77707|77708')
 >>>ws.recv()
 ```
+And then open another terminal! run the redis client.
+
+```
+127.0.0.1:6379>PUBLISH match "hello this is publish message:9999"
+127.0.0.1:6379>
+
+```
+
+You will will see your have news on the pre-terminal!
+
+```  
+        /\        || //
+       //\\       ||//
+      //  \\      ||\\
+     //====\\     || \\
+    //      \\    ||  \\
+    ========================
+```

@@ -1,0 +1,12 @@
+backports-abc==0.4
+certifi==2016.8.31
+gevent==1.1.2
+greenlet==0.4.10
+redis==2.10.5
+singledispatch==3.4.0.3
+six==1.10.0
+tornado==4.4.1
+tornado-redis==2.4.18
+ujson==1.35
+websocket==0.2.1
+websocket-client==0.37.0
